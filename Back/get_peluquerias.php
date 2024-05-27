@@ -1,6 +1,6 @@
 <?php
 // Crear conexión
-include "conexion.php";
+include ("conexion.php");
 $conn = new mysqli(DBSERVER, DBUSER, DBPSW, DBNAME);
 
 // Verifico conexión

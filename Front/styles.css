@@ -13,9 +13,9 @@ header {
     background-color: #333;
     color: #fff;
     padding: 10px 0;
-    text-align: center;
     position: relative;
     width: 100%;
+    z-index: 1;
 }
 
 .menu-icon {
@@ -50,6 +50,7 @@ nav ul li a {
     top: 0;
     left: -250px;
     transition: 0.3s;
+    z-index: 2;
 }
 
 .sidebar.open {
@@ -72,6 +73,7 @@ nav ul li a {
 
 .sidebar ul li {
     padding: 10px;
+    margin-top: 50px;
 }
 
 .sidebar ul li a {
@@ -81,7 +83,7 @@ nav ul li a {
 
 main {
     padding: 20px;
-    margin-left: 260px; /* Adjust this if the sidebar width changes */
+    margin-left: 260px;
     flex: 1;
 }
 
@@ -91,6 +93,7 @@ footer {
     text-align: center;
     padding: 10px 0;
     width: 100%;
+    position: absolute;
     bottom: 0;
 }
 
@@ -123,7 +126,7 @@ footer .legal-links {
 }
 
 .content-container p,
-.content-container ul {
+content-container ul {
     color: #666;
     line-height: 1.6;
 }
@@ -144,16 +147,16 @@ footer .legal-links {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    width: 300px;
+    width: 400px;
     overflow: hidden;
     margin: 10px;
     text-align: center;
 }
+
 .card-link {
     text-decoration: none;
     cursor: pointer;
 }
-
 
 .card img {
     width: 100%;
@@ -170,6 +173,7 @@ footer .legal-links {
     padding: 0 10px;
     color: #666;
 }
+
 #eventModal {
     position: fixed;
     top: 50%;
@@ -185,3 +189,71 @@ footer .legal-links {
     display: block;
     margin: 10px 0;
 }
+
+.profile-card {
+    background-color: #719192;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1.5px solid #ddd;
+    border-radius: 5px;
+    padding: 35px;
+    margin: 100px auto;
+    max-width: 500px;
+    text-align: center;
+}
+
+.profile-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-card h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.profile-card p {
+    color: #666;
+}
+
+#editForm {
+    margin-top: 20px;
+}
+
+#editForm label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+#editForm input,
+#editForm textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#editForm input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.barra-opcion {
+    margin-top: 25%;
+}
+
+/* Agregar el estilo para el mensaje de bienvenida */
+.welcome-message {
+    color: #fff;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
