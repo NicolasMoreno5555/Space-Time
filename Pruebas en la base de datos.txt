@@ -1,0 +1,1 @@
+INSERT INTO `peluqueria` (`id_peluqueria`, `nombre`, `direccion`, `apertura`, `cierre`) VALUES (NULL, 'Peluqueria madrilenia', 'calle Eduardo Barreiros 17', '10:00:00', '20:00:00');
