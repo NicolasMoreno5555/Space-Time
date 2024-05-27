@@ -1,1 +1,3 @@
 INSERT INTO `peluqueria` (`id_peluqueria`, `nombre`, `direccion`, `apertura`, `cierre`) VALUES (NULL, 'Peluqueria madrilenia', 'calle Eduardo Barreiros 17', '10:00:00', '20:00:00');
+
+INSERT INTO `usuario` (`id`, `id_google`, `nombre`, `apellido`, `email`, `password`, `nickname`) VALUES (NULL, NULL, 'nicolas', 'Moreno', 'moreno@gmail.com', '6a27e16f7796a1b39c5264ea2f9ec874\r\n', 'mnico');
