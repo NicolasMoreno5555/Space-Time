@@ -5,8 +5,6 @@ include('conexion.php'); // Incluye tu archivo de conexión a la base de datos
 // Obtener el ID de la peluquería desde la URL
 $id_peluqueria = $_GET['id'];
 
-
-
 // Consultar detalles de la peluquería
 $query_peluqueria = "SELECT nombre, direccion, telefono FROM peluqueria WHERE id_peluqueria = ?";
 $stmt_peluqueria = $conexion->prepare($query_peluqueria);
@@ -21,6 +19,10 @@ $stmt_servicios = $conexion->prepare($query_servicios);
 $stmt_servicios->bind_param("i", $id_peluqueria);
 $stmt_servicios->execute();
 $result_servicios = $stmt_servicios->get_result();
+
+$stmt_peluqueria->close();
+$stmt_servicios->close();
+$conexion->close();
 
 ?>
 

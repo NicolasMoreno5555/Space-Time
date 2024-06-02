@@ -29,4 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         header("Location: ../Front/detalles_peluqueria.php?id=$id_peluqueria&status=error");
     }
+    $stmt_reserva->close();
+    $stmt_servicio->close();
+    $conexion->close();
+
 }

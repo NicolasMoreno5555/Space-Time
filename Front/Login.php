@@ -46,7 +46,8 @@
             SELECT id, nombre, apellido, email, nickname, password 
             FROM usuario 
             WHERE email = ? OR nickname = ?
-        ");
+            
+            ");
 
             // Vincular los parámetros
             $stmt->bind_param("ss", $usuario, $usuario);
