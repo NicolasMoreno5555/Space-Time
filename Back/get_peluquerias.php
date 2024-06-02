@@ -1,15 +1,9 @@
 <?php
 // Crear conexión
 include ("conexion.php");
-$conn = new mysqli(DBSERVER, DBUSER, DBPSW, DBNAME);
-
-// Verifico conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
 
 $sql = "SELECT id_peluqueria, nombre, direccion, apertura, cierre FROM peluqueria";
-$result = $conn->query($sql);
+$result = $conexion->query($sql);
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
@@ -28,4 +22,4 @@ if ($result->num_rows > 0) {
     echo "0 resultados";
 }
 
-$conn->close();
+$conexion->close();

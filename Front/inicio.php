@@ -10,12 +10,13 @@
 </head>
 
 <body>
-    <header>
+    
+<header>
         <div class="menu-icon" onclick="toggleMenu()">
             &#9776;
         </div>
-        <h1>
-            <p>Bienvenido/a <?= htmlspecialchars($_SESSION['nombre']) ?></p>
+        <h1 class="welcome-message">
+            Bienvenido/a <?= htmlspecialchars($_SESSION['nombre']) ?>
         </h1>
         <nav>
             <ul>

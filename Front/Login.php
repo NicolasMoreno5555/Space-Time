@@ -36,9 +36,6 @@
             // Incluir el archivo de conexión a la base de datos
             include("conexion.php");
 
-            // Crear una nueva conexión a la base de datos
-            $conexion = new mysqli(DBSERVER, DBUSER, DBPSW, DBNAME);
-
             // Comprobar la conexión
             if ($conexion->connect_error) {
                 die("Error de conexión: " . $conexion->connect_error);

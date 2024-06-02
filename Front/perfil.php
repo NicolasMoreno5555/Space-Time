@@ -8,13 +8,6 @@ if (!isset($_SESSION['id'])) {
     exit();
 }
 
-$conexion = new mysqli(DBSERVER, DBUSER, DBPSW, DBNAME);
-
-// Comprobar la conexión
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
-}
-
 $userId = $_SESSION['id'];
 
 // Obtener los datos del usuario

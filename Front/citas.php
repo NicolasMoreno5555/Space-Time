@@ -1,9 +1,9 @@
 <?php
 include "conexion.php";
-$conn = new mysqli(DBSERVER, DBUSER, DBPSW, DBNAME);
+$conexion = new mysqli(DBSERVER, DBUSER, DBPSW, DBNAME);
 
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
+if ($conexion->connect_error) {
+    die("Conexión fallida: " . $conexion->connect_error);
 }
 
 
@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 
 
 $sql = "SELECT id, title, start, end FROM citas WHERE user_id = ?"; // Ajusta la consulta según tu base de datos
-$stmt = $conn->prepare($sql);
+$stmt = $conexion->prepare($sql);
 $stmt->bind_param("i", $userId); // asume qq $userId es el ID del usuario actual
 $stmt->execute();
 $result = $stmt->get_result();
@@ -27,7 +27,7 @@ while ($row = $result->fetch_assoc()) {
 }
 
 $stmt->close();
-$conn->close();
+$conexion->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">

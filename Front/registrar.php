@@ -35,18 +35,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Verificar si el email o el nickname ya existen
 
-    include_once("conexion.php");
-    // Conexión a la base de datos
-    $conn = new mysqli(DBSERVER, DBUSER, DBPSW, DBNAME);
-
-    // Verificar la conexión
-    if ($conn->connect_error) {
-        die("Conexión fallida: " . $conn->connect_error);
-    }
+    include ("conexion.php");
 
     if (empty($errors)) {
         $sql = "SELECT id FROM usuario WHERE email = ? OR nickname = ?";
-        $stmt = $conn->prepare($sql);
+        $stmt = $conexion->prepare($sql);
         $stmt->bind_param("ss", $email, $nickname);
         $stmt->execute();
         $stmt->store_result();
@@ -71,19 +64,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Insertar el nuevo usuario
         $sql = "INSERT INTO usuario (nombre, apellido, email, password, nickname) VALUES (?, ?, ?, ?, ?)";
-        $stmt = $conn->prepare($sql);
+        $stmt = $conexion->prepare($sql);
         $stmt->bind_param("sssss", $nombre, $apellido, $email, $hashed_password, $nickname);
 
         if ($stmt->execute()) {
             echo "Registro exitoso.";
         } else {
-            echo "Error: " . $conn->error;
+            echo "Error: " . $conexion->error;
         }
 
         $stmt->close();
     }
 
-    $conn->close();
+    $conexion->close();
 }
 ?>
 
