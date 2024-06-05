@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Verificar si el email o el nickname ya existen
 
-    include ("conexion.php");
+    include("conexion.php");
 
     if (empty($errors)) {
         $sql = "SELECT id FROM usuario WHERE email = ? OR nickname = ?";
@@ -68,7 +68,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("sssss", $nombre, $apellido, $email, $hashed_password, $nickname);
 
         if ($stmt->execute()) {
-            echo "Registro exitoso.";
+            echo "<h1>Registro exitoso.</h1>";
+            header("Location: Login.php");
         } else {
             echo "Error: " . $conexion->error;
         }

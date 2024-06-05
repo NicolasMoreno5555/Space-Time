@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    
-<header>
+
+    <header>
         <div class="menu-icon" onclick="toggleMenu()">
             &#9776;
         </div>
@@ -23,6 +23,9 @@
                 <li><a href="inicio.php">Inicio</a></li>
                 <li><a href="perfil.php">Perfil</a>
                 <li><a href="logout.php">Cerrar sesion</a></li>
+                <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1) : ?>
+                    <li><a href="inicio_admin.php">Panel de Administración</a></li>
+                <?php endif; ?>
                 </li>
             </ul>
         </nav>
@@ -34,6 +37,9 @@
             <li><a href="inicio.php">Inicio</a></li>
             <li><a href="perfil.html">Perfil</a></li>
             <li><a href="citas.php">Citas pedidas</a></li>
+            <?php if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1) : ?>
+                <li><a href="inicio_admin.php">Panel de Administración</a></li>
+            <?php endif; ?>
 
             <!-- Agrega más elementos de menú según sea necesario -->
         </ul>

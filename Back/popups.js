@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Ocultar el mensaje después de 5 segundos
             setTimeout(() => {
                 messageContainer.remove();
-            }, 5000);
+            }, 3000);
         }
     }
 });
@@ -50,11 +50,11 @@ function confirmReservation(form) {
 }
 
 function validateTime() {
-    const apertura = "<?php echo $peluqueria['apertura']; ?>";
-    const cierre = "<?php echo $peluqueria['cierre']; ?>";
+    const apertura = "Esa hora no esta disponible, es muy temprano";
+    const cierre = "o te has pasado de la hora de cierre";
     const selectedTime = document.getElementById('hora').value;
 
-    if (selectedTime < apertura || selectedTime > cierre) {
+    if (selectedTime > apertura || selectedTime < cierre) {
         alert(`Por favor, seleccione una hora entre ${apertura} y ${cierre}.`);
         return false;
     }

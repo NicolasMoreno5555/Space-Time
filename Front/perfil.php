@@ -57,6 +57,7 @@ $profilePhoto = $profilePhotoDir . "/fotoperfil.jpg";
             <ul>
                 <li><a href="inicio.php">Inicio</a></li>
                 <li><a href="perfil.php">Perfil</a></li>
+                <li><a href="logout.php">Cerrar sesion</a></li>
             </ul>
         </nav>
     </header>
